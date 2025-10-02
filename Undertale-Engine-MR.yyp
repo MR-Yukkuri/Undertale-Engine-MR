@@ -243,6 +243,7 @@
     {"id":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
     {"id":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
     {"id":{"name":"Anim_Create","path":"scripts/Anim_Create/Anim_Create.yy",},},
+    {"id":{"name":"Anim_CreateIter","path":"scripts/Anim_CreateIter/Anim_CreateIter.yy",},},
     {"id":{"name":"Anim_Destroy","path":"scripts/Anim_Destroy/Anim_Destroy.yy",},},
     {"id":{"name":"Anim_GetValue","path":"scripts/Anim_GetValue/Anim_GetValue.yy",},},
     {"id":{"name":"Anim_Init","path":"scripts/Anim_Init/Anim_Init.yy",},},
