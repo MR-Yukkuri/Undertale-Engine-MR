@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_SetState",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_SetState",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/Shop/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_GetHost",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_GetHost",
+  "parent":{
+    "name":"Host",
+    "path":"folders/Scripts/Shop/Host.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

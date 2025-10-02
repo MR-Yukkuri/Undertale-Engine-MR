@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_SetMenuBuy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_SetMenuBuy",
+  "parent":{
+    "name":"Menu",
+    "path":"folders/Scripts/Shop/Menu.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

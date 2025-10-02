@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Lang_IsSpriteExists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Lang_IsSpriteExists",
+  "parent":{
+    "name":"Lang",
+    "path":"folders/Scripts/GMU/Lang.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

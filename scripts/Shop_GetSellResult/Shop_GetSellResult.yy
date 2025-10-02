@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_GetSellResult",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_GetSellResult",
+  "parent":{
+    "name":"Sell",
+    "path":"folders/Scripts/Shop/Sell.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_CallHostEvent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_CallHostEvent",
+  "parent":{
+    "name":"Host",
+    "path":"folders/Scripts/Shop/Host.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

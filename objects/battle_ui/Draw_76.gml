@@ -1,0 +1,5 @@
+if !surface_exists(sur)
+	sur = surface_create(640,480)
+surface_set_target(sur)
+draw_clear_alpha(c_black,0)
+surface_reset_target()

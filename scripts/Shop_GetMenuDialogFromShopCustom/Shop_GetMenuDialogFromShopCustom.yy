@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_GetMenuDialogFromShopCustom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_GetMenuDialogFromShopCustom",
+  "parent":{
+    "name":"Menu",
+    "path":"folders/Scripts/Shop/Menu.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

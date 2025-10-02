@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Input_SetStateOverride",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Input_SetStateOverride",
+  "parent":{
+    "name":"Input",
+    "path":"folders/Scripts/GMU/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

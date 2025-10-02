@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Flag_Save",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Flag_Save",
+  "parent":{
+    "name":"Flag",
+    "path":"folders/Scripts/Flag.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

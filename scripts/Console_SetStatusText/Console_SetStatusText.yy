@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Console_SetStatusText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Console_SetStatusText",
+  "parent":{
+    "name":"Console",
+    "path":"folders/Scripts/GMU/Console.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

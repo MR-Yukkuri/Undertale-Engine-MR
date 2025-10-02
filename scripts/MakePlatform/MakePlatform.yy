@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MakePlatform",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MakePlatform",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

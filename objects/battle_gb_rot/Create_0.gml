@@ -1,0 +1,15 @@
+time = 0
+movetime = 0
+pause = 0
+duration = 0
+inv = 0
+len = 0
+angle = 0
+spd = 0
+xscale = 1
+yscale = 1
+color = 0
+fade = 0
+rot_dur = 240
+follow = false
+follow_target = battle_board

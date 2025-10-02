@@ -1,0 +1,1 @@
+f_a = variable_instance_exists(follow_target,"angle") ? follow_target.angle : follow_target.image_angle

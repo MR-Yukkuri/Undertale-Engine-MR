@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_GetMenuDialogCandidateNumber",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_GetMenuDialogCandidateNumber",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Scripts/Battle/Menu/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

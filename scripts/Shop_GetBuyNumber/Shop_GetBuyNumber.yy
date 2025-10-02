@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_GetBuyNumber",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_GetBuyNumber",
+  "parent":{
+    "name":"Buy",
+    "path":"folders/Scripts/Shop/Buy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

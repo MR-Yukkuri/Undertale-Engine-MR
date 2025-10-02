@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_ClearMenuDialogCandidates",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_ClearMenuDialogCandidates",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Scripts/Battle/Menu/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

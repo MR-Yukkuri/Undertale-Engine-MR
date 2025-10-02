@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_CreateBoardCover",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_CreateBoardCover",
+  "parent":{
+    "name":"Board",
+    "path":"folders/Scripts/Battle/Board.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

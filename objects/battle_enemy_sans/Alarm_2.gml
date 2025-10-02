@@ -1,0 +1,10 @@
+if !Anim_IsExists(id,"slambody_x")
+	Anim_Create(id,"slambody_x",2,2,slambody_x,-slambody_x,10)
+if !Anim_IsExists(id,"slambody_y")
+	Anim_Create(id,"slambody_y",2,2,slambody_y,-slambody_y,10)
+if !Anim_IsExists(id,"slamhead_x")
+	Anim_Create(id,"slamhead_x",2,2,slamhead_x,-slamhead_x,10)
+if !Anim_IsExists(id,"slamhead_y")
+	Anim_Create(id,"slamhead_y",2,2,slamhead_y,-slamhead_y,10)
+if !Anim_IsExists(id,"body_image")
+	alarm[3] = 20

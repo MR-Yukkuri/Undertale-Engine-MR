@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Console_SetStatusRatio",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Console_SetStatusRatio",
+  "parent":{
+    "name":"Console",
+    "path":"folders/Scripts/GMU/Console.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

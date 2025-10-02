@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SlamRight",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SlamRight",
+  "parent":{
+    "name":"Bullet",
+    "path":"folders/Scripts/Battle/Bullet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

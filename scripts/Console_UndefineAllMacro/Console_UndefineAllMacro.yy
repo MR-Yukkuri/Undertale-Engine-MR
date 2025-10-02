@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Console_UndefineAllMacro",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Console_UndefineAllMacro",
+  "parent":{
+    "name":"Console",
+    "path":"folders/Scripts/GMU/Console.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

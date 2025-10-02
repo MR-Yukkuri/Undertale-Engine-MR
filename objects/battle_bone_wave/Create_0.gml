@@ -1,0 +1,15 @@
+size = 50
+space = 12
+dir = 0
+hspd = 0
+vspd = 0
+time = 0
+count = 0
+use_cos = false
+center_space = 40
+space_size = 20
+space_cycle = 0.3
+color = COLOR.WHITE
+head = false
+follow = false
+follow_target = battle_board

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetPlainTextLine",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetPlainTextLine",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

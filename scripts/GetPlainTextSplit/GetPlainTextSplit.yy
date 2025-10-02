@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetPlainTextSplit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetPlainTextSplit",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

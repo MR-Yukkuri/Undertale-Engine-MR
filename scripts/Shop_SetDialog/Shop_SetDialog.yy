@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_SetDialog",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_SetDialog",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Scripts/Shop/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

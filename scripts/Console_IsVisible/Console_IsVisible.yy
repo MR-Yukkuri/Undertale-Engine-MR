@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Console_IsVisible",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Console_IsVisible",
+  "parent":{
+    "name":"Console",
+    "path":"folders/Scripts/GMU/Console.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

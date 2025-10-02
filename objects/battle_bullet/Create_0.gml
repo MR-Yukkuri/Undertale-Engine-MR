@@ -1,0 +1,17 @@
+depth=DEPTH_BATTLE.BULLET;
+out = false
+use_kr = false
+damage = 0
+color = 0
+rotate = 0
+follow_target = battle_board
+follow_x = 0
+follow_y = 0
+follow = false
+follow_angle = image_angle
+follow_hspeed = 0
+follow_vspeed = 0
+f_temp = false
+auto_destroy = false
+can_break = false
+hit = true

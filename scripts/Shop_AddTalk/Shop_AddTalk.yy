@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shop_AddTalk",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shop_AddTalk",
+  "parent":{
+    "name":"Talk",
+    "path":"folders/Scripts/Shop/Talk.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
