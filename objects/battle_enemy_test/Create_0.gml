@@ -7,5 +7,3 @@ Battle_SetTurnInfo(BATTLE_TURN.TIME,-1); //攻撃の時間を無制限に設定 
 //大きさをニ倍　スプライトのサイズに応じて調整してください(draw_sprite等には効果はないので注意)
 image_xscale = 2;
 image_yscale = 2;
-repeat(8)
-Item_Add(item_tml)
