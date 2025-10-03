@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Anim_CreateIter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Anim_CreateIter",
+  "parent":{
+    "name":"Anim",
+    "path":"folders/Scripts/GMU/Anim.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

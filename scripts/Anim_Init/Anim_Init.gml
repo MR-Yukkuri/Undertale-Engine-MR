@@ -36,7 +36,8 @@ function Anim_Init() {
 		DELAY,
 		ARG_0,
 		ARG_1,
-		TIME
+		TIME,
+		ACCESSORS
 	};
 
 
