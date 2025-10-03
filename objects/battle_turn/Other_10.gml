@@ -1,4 +1,4 @@
-	///@desc Turn Preparation Start
+///@desc Turn Preparation Start
 
 //枠を65×65の大きさに変形　変形が終わると攻撃が始まる
 //ここで変形する必要がないなら消してもOK
