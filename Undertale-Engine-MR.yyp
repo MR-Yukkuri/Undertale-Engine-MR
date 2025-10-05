@@ -177,6 +177,7 @@
     {"id":{"name":"battle_soul_yellow_bullet","path":"objects/battle_soul_yellow_bullet/battle_soul_yellow_bullet.yy",},},
     {"id":{"name":"battle_soul_yellow","path":"objects/battle_soul_yellow/battle_soul_yellow.yy",},},
     {"id":{"name":"battle_soul","path":"objects/battle_soul/battle_soul.yy",},},
+    {"id":{"name":"battle_turn_test_rand0","path":"objects/battle_turn_test_rand0/battle_turn_test_rand0.yy",},},
     {"id":{"name":"battle_turn_test0","path":"objects/battle_turn_test0/battle_turn_test0.yy",},},
     {"id":{"name":"battle_turn","path":"objects/battle_turn/battle_turn.yy",},},
     {"id":{"name":"battle_ui","path":"objects/battle_ui/battle_ui.yy",},},

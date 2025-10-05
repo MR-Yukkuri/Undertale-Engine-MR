@@ -16,4 +16,6 @@ if _turn >= 2{
 ///
 
 Battle_SetMenuDialog(txt); //設定したテキストをダイアログに反映
-_turn++ //ターンを進める
+if !(attack_prog && Battle_GetMenuFightDamage() <= 0 && Battle_GetMenuChoiceEnemy() == Battle_ConvertEnemySlotToMenuChoiceEnemy(_enemy_slot))
+	_turn++ //ターンを進める
+Battle_SetMenuFightDamage(0)
