@@ -4,6 +4,7 @@
 ///@arg delay*
 ///@arg tween*
 ///@arg ease*
+///@arg color*
 ///@arg blendmode*
 function Fader_Fade() {
 	var START=argument[0];
@@ -12,7 +13,8 @@ function Fader_Fade() {
 	var DELAY=0;
 	var TWEEN = 0
 	var EASE = 0
-	var BM = bm_normal
+	var COLOR = fader.color
+	var BM = fader.bm
 	if(argument_count>=4){
 		DELAY=argument[3];
 	}
@@ -23,11 +25,15 @@ function Fader_Fade() {
 		EASE=argument[5];
 	}
 	if(argument_count>=7){
-		BM=argument[6];
+		COLOR=argument[6];
+	}
+	if(argument_count>=8){
+		BM=argument[7];
 	}
 	if(START==-1){
 		START=fader.alpha;
 	}
+	fader.color = COLOR
 	fader.bm = BM
 	Anim_Destroy(fader,"alpha");
 	Anim_Create(fader,"alpha",TWEEN,EASE,START,TARGET-START,TIME,DELAY);

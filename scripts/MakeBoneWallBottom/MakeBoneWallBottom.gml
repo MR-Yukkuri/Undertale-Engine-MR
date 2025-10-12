@@ -13,11 +13,26 @@ function MakeBoneWallBottom(_length,pause=30,duration=30,_color=COLOR.WHITE,_bon
 	alart.alarm[1] = pause+duration
 	alart.color = _color
 	alart.dir = DIR.DOWN
+	alart.follow = _follow
+	alart.follow_target = _follow_target
+	var X,Y
+	if _follow {
+		if _follow_target == battle_board {
+			X = Battle_GetTurnInfo(BATTLE_TURN.BOARD_X,BATTLE_BOARD.X)
+			Y = Battle_GetTurnInfo(BATTLE_TURN.BOARD_X,BATTLE_BOARD.Y)
+		}
+		else {
+			X = _follow_target.xstart
+			Y = _follow_target.ystart
+		}
+	}
+	else {
+		X = _follow_target.x
+		Y = _follow_target.x
+	}
 	alart.position = [
-		[battle_board.x-battle_board.left+1,battle_board.y+battle_board.down-_length+1],
-		[battle_board.x+battle_board.right-2,battle_board.y+battle_board.down-2]
+		[X-_follow_target.left+1,Y+_follow_target.down-_length+1],
+		[X+_follow_target.right-2,Y+_follow_target.down-2]
 	]
 	alart.space = _bone_space
-	alart.follow = _follow
-	alart.follow = _follow_target
 }
