@@ -90,8 +90,27 @@ function Anim_CreateIter() {
 				map[?ANIM_DATA.ARG_0]=ARG_0;
 				map[?ANIM_DATA.ARG_1]=ARG_1;
 				map[?ANIM_DATA.TIME]=0;
+			}
+		}else if(is_struct(TARGET)){
+			if(struct_exists(TARGET,VAR_NAME)){
+				var map=ds_map_create();
+				ds_map_add(global._gmu_anim_data,global._gmu_anim_id,map);
+				ds_list_add(global._gmu_anim_list,global._gmu_anim_id);
+				inst_result[0]=global._gmu_anim_id;
+				global._gmu_anim_id-=1;
 			
-				proc_result+=1;
+				map[?ANIM_DATA.TARGET]=TARGET;
+				map[?ANIM_DATA.VAR_NAME]=VAR_NAME;
+				map[?ANIM_DATA.ACCESSORS]=ACCESSORS;
+				map[?ANIM_DATA.TWEEN]=TWEEN;
+				map[?ANIM_DATA.EASE]=EASE;
+				map[?ANIM_DATA.START]=START;
+				map[?ANIM_DATA.CHANGE]=CHANGE;
+				map[?ANIM_DATA.DURATION]=DURATION;
+				map[?ANIM_DATA.DELAY]=DELAY;
+				map[?ANIM_DATA.ARG_0]=ARG_0;
+				map[?ANIM_DATA.ARG_1]=ARG_1;
+				map[?ANIM_DATA.TIME]=0;
 			}
 		}
 	}
