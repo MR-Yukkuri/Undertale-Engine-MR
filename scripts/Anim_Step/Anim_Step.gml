@@ -3,7 +3,7 @@ function Anim_Step() {
 	repeat(ds_list_size(global._gmu_anim_list)){
 		var key=global._gmu_anim_list[|proc];
 		var map=global._gmu_anim_data[?key];
-		if(instance_exists(map[?ANIM_DATA.TARGET]) || map[?ANIM_DATA.TARGET]==global){
+		if(instance_exists(map[?ANIM_DATA.TARGET]) || map[?ANIM_DATA.TARGET]==global || is_struct(map[?ANIM_DATA.TARGET])){
 			if(map[?ANIM_DATA.DELAY]<=0){
 				var value;
 				var accessors=[];
