@@ -2,7 +2,7 @@
   "$GMProject":"v1",
   "%Name":"Undertale-Engine-MR",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -121,7 +121,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.0.207",
   },
   "name":"Undertale-Engine-MR",
   "resources":[
@@ -786,6 +786,7 @@
     {"id":{"name":"spr_closed_captions_corner","path":"sprites/spr_closed_captions_corner/spr_closed_captions_corner.yy",},},
     {"id":{"name":"spr_debug_checkbox","path":"sprites/spr_debug_checkbox/spr_debug_checkbox.yy",},},
     {"id":{"name":"spr_debug_hiddenbox","path":"sprites/spr_debug_hiddenbox/spr_debug_hiddenbox.yy",},},
+    {"id":{"name":"spr_debug_overlay","path":"sprites/spr_debug_overlay/spr_debug_overlay.yy",},},
     {"id":{"name":"spr_default","path":"sprites/spr_default/spr_default.yy",},},
     {"id":{"name":"spr_demo_playing","path":"sprites/spr_demo_playing/spr_demo_playing.yy",},},
     {"id":{"name":"spr_demo_recording","path":"sprites/spr_demo_recording/spr_demo_recording.yy",},},

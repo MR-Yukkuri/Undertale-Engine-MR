@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_gamepad_ps4_small_dpad_left",
   "bboxMode":0,
   "bbox_bottom":10,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9db08a36-e4a3-40be-833a-7896e6f82534","name":"9db08a36-e4a3-40be-833a-7896e6f82534","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9db08a36-e4a3-40be-833a-7896e6f82534","name":"9db08a36-e4a3-40be-833a-7896e6f82534","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

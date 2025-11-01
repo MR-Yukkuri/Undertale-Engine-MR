@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_soul_red",
   "bboxMode":2,
   "bbox_bottom":12,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bb2d0d92-949a-43fe-8a46-afd41e83545c","name":"bb2d0d92-949a-43fe-8a46-afd41e83545c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d3412df6-4185-4b3d-9087-26c8a3165d46","name":"d3412df6-4185-4b3d-9087-26c8a3165d46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bb2d0d92-949a-43fe-8a46-afd41e83545c","name":"bb2d0d92-949a-43fe-8a46-afd41e83545c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d3412df6-4185-4b3d-9087-26c8a3165d46","name":"d3412df6-4185-4b3d-9087-26c8a3165d46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

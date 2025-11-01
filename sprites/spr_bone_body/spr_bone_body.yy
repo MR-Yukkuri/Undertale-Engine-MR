@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_bone_body",
   "bboxMode":0,
   "bbox_bottom":5,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"98e7e5b8-93c6-4a6e-96d9-1f0420b99f94","name":"98e7e5b8-93c6-4a6e-96d9-1f0420b99f94","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"98e7e5b8-93c6-4a6e-96d9-1f0420b99f94","name":"98e7e5b8-93c6-4a6e-96d9-1f0420b99f94","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

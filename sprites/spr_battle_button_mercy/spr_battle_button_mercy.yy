@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_button_mercy",
   "bboxMode":0,
   "bbox_bottom":41,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b0bfa764-3680-437c-91df-15dd73b5661f","name":"b0bfa764-3680-437c-91df-15dd73b5661f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"91eb31d4-a283-4466-83a5-18115e856756","name":"91eb31d4-a283-4466-83a5-18115e856756","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b0bfa764-3680-437c-91df-15dd73b5661f","name":"b0bfa764-3680-437c-91df-15dd73b5661f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"91eb31d4-a283-4466-83a5-18115e856756","name":"91eb31d4-a283-4466-83a5-18115e856756","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

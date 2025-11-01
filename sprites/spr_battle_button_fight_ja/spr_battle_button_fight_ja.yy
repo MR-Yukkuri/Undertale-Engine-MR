@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_button_fight_ja",
   "bboxMode":0,
   "bbox_bottom":41,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9a32fae0-bc04-4f3c-b01a-1aac274292fa","name":"9a32fae0-bc04-4f3c-b01a-1aac274292fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"20d2a375-9f2f-47e3-9881-b0e6ca8899c1","name":"20d2a375-9f2f-47e3-9881-b0e6ca8899c1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9a32fae0-bc04-4f3c-b01a-1aac274292fa","name":"9a32fae0-bc04-4f3c-b01a-1aac274292fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"20d2a375-9f2f-47e3-9881-b0e6ca8899c1","name":"20d2a375-9f2f-47e3-9881-b0e6ca8899c1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

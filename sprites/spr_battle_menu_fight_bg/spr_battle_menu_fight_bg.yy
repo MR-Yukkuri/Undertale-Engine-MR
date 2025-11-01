@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_menu_fight_bg",
   "bboxMode":0,
   "bbox_bottom":114,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0f9b2896-a562-4788-be74-fa353994cddc","name":"0f9b2896-a562-4788-be74-fa353994cddc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0f9b2896-a562-4788-be74-fa353994cddc","name":"0f9b2896-a562-4788-be74-fa353994cddc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battle_dialog_enemy_spike_wide",
   "bboxMode":0,
   "bbox_bottom":18,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d6c27e09-514c-45e9-aa86-8f1cfae897fc","name":"d6c27e09-514c-45e9-aa86-8f1cfae897fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d6c27e09-514c-45e9-aa86-8f1cfae897fc","name":"d6c27e09-514c-45e9-aa86-8f1cfae897fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

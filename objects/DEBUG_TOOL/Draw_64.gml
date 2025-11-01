@@ -37,23 +37,122 @@ for(var i=0;i<array_length(show_variable);i++) {
 		}
 	}
 }
-/*if mouse_check_button_pressed(mb_right) && !click{
-	click = true
-	mx = mouse_x
-	my = mouse_y
-	obj = instance_nearest(mx,my,all)
-}
-if click {
-	if instance_exists(obj) {
-		var Obj_name = object_get_name(obj.object_index)
+if view_debug {
+	var ObjNames = []
+	var Id = []
+	var Y = undefined
+	var Xx = undefined
+	var Wid = 0
+
+	if c_state < 2 {
+		with (all) {
+			var match = (other.c_state == 1 && array_contains(other.obj, id)) || (other.c_state != 1 && other.m_check(x, y, true))
+			draw_sprite_ext(spr_debug_overlay, 0, x, y, 1, 1, 0, match ? c_yellow : c_white, 0.5)
+			
+			if match {
+				var name = object_get_name(object_index)
+				var tx = x + 16
+				var sw = string_width(name)
+				if tx + sw > room_width tx = room_width - sw
+				if is_undefined(Y) Y = y
+				if is_undefined(Xx) || Xx > tx Xx = tx
+				if sw > Wid Wid = sw
+				array_push(ObjNames, name)
+				array_push(Id, id)
+			}
+		}
+	}
+	else if c_state == 2 {
+		ObjNames = variable_instance_get_names(obj)
+		Y = obj.y
+		Xx = obj.x + 16
+
+		if array_length(ObjNames) == 0 {
+			ObjNames = [ $"<{object_get_name(obj.object_index)}>", "(variable not found)" ]
+			Wid = max(string_width(ObjNames[0]), string_width(ObjNames[1]))
+		}
+		else {
+			var widths = []
+			for (var i = 0; i < array_length(ObjNames); i++) {
+				var key = ObjNames[i]
+				widths[i] = string_width(key + " : " + string(variable_instance_get(obj, key)))
+			}
+			array_sort(widths, function(a, b) { return b - a })
+			array_insert(ObjNames, 0, $"<{object_get_name(obj.object_index)}>")
+			Wid = max(widths[0], string_width(ObjNames[0]))
+		}
+
+		with (all) {
+			draw_sprite_ext(spr_debug_overlay, 0, x, y, 1, 1, 0, other.obj == id ? c_yellow : c_white, 0.5)
+		}
+	}
+
+	if array_length(ObjNames) > 0 {
+		if c_state > 0 {
+			Xx = list_pos[0]
+			Y = list_pos[1]
+		}
+
 		draw_set_alpha(0.5)
-		draw_roundrect_color(mx,my,mx+string_width(Obj_name)+4,my+string_height(Obj_name)+4,c_black,c_black,false)
+		draw_roundrect_colour(Xx - 5, Y - 5, Xx + Wid, Y + string_height(" ") * array_length(ObjNames), c_black, c_black, false)
 		draw_set_alpha(1)
-		draw_roundrect_color(mx,my,mx+string_width(Obj_name)+4,my+string_height(Obj_name)+4,c_white,c_white,1)
-		draw_text(mx+5,my+5,Obj_name)
-		
+
+		var list_hover = m_check(list_pos[0] - 8, list_pos[1] - 5, true)
+		if c_state > 0
+			draw_sprite_ext(spr_debug_overlay, 1, list_pos[0] - 8, list_pos[1] - 5, 1, 1, 0, list_hover ? c_yellow : c_white, 1)
+
+		for (var i = 0; i < array_length(ObjNames); i++) {
+			var key = ObjNames[i]
+			var value = (c_state == 2 && i > 0 && key != "(variable not found)") ? " : " + string(variable_instance_get(obj, key)) : ""
+			var text = key + value
+			var y_pos = Y + i * string_height(" ")
+			var hover = (c_state == 1 || (c_state == 2 && i > 0 && key != "(variable not found)")) && m_check_range(Xx, y_pos, Xx + string_width(text), y_pos + string_height(text) - 5)
+			draw_text_outline(Xx, y_pos, text, , hover ? c_yellow : c_white, , , 2)
+		}
+
+		if mouse_check_button_pressed(mb_left) {
+			switch c_state {
+				case 0:
+					obj = Id
+					c_state = 1
+					list_pos = [Xx, Y]
+					break
+				case 1:
+					for (var i = 0; i < array_length(ObjNames); i++) {
+						var y_pos = Y + i * string_height(" ")
+						if m_check_range(Xx, y_pos, Xx + string_width(ObjNames[i]), y_pos + string_height(ObjNames[i])) {
+							c_state = 2
+							obj = Id[i]
+						}
+					}
+					if list_hover c_state = 0
+					break
+				case 2:
+					if list_hover {
+						c_state = 0
+						break
+					}
+					for (var i = 0; i < array_length(ObjNames); i++) {
+						var key = ObjNames[i]
+						if c_state == 2 && i > 0 && key != "(variable not found)" {
+							var text = key + " : " + string(variable_instance_get(obj, key))
+							var y_pos = Y + i * string_height(" ")
+							if m_check_range(Xx, y_pos, Xx + string_width(text), y_pos + string_height(text) - 5) {
+								var val = variable_instance_get(obj, key)
+								var new_val = get_string_auto(key, val)
+								variable_instance_set(obj, key, new_val)
+								mouse_clear(mb_left)
+							}
+						}
+					}
+					break
+			}
+		}
+
+		if c_state > 0 && mouse_check_button(mb_left) {
+			list_pos[0] += mouse_x - oldmpos[0]
+			list_pos[1] += mouse_y - oldmpos[1]
+		}
 	}
-	else {
-		click = false
-	}
-}*/
+}
+oldmpos = [mouse_x, mouse_y]
