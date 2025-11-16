@@ -15,3 +15,6 @@ f_temp = false
 auto_destroy = false
 can_break = false
 hit = true
+hit_destroy = false
+can_prevent = false
+target_shield = [0]

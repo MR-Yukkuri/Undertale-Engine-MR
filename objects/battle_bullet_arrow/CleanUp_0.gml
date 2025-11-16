@@ -1,0 +1,1 @@
+ds_map_destroy(mix_spr)

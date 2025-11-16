@@ -38,6 +38,7 @@ for(var i=0;i<array_length(show_variable);i++) {
 	}
 }
 if view_debug {
+	try {
 	var ObjNames = []
 	var Id = []
 	var Y = undefined
@@ -66,25 +67,22 @@ if view_debug {
 		ObjNames = variable_instance_get_names(obj)
 		Y = obj.y
 		Xx = obj.x + 16
-
-		if array_length(ObjNames) == 0 {
-			ObjNames = [ $"<{object_get_name(obj.object_index)}>", "(variable not found)" ]
-			Wid = max(string_width(ObjNames[0]), string_width(ObjNames[1]))
+		array_insert(ObjNames, 0, "y")
+		array_insert(ObjNames, 0, "x")
+		array_insert(ObjNames, 0, $"<{object_get_name(obj.object_index)}>")
+		var widths = []
+		for (var i = 1;i < array_length(ObjNames);i++) {
+			var key = ObjNames[i]
+			var val = variable_instance_get(obj, key)
+			widths[i] = string_width(key + " : " + string(val))
 		}
-		else {
-			var widths = []
-			for (var i = 0; i < array_length(ObjNames); i++) {
-				var key = ObjNames[i]
-				widths[i] = string_width(key + " : " + string(variable_instance_get(obj, key)))
-			}
-			array_sort(widths, function(a, b) { return b - a })
-			array_insert(ObjNames, 0, $"<{object_get_name(obj.object_index)}>")
-			Wid = max(widths[0], string_width(ObjNames[0]))
-		}
+		array_sort(widths, function(a, b) { return b - a })
+		Wid = max(widths[1], string_width(ObjNames[0]))
 
 		with (all) {
 			draw_sprite_ext(spr_debug_overlay, 0, x, y, 1, 1, 0, other.obj == id ? c_yellow : c_white, 0.5)
 		}
+
 	}
 
 	if array_length(ObjNames) > 0 {
@@ -101,12 +99,12 @@ if view_debug {
 		if c_state > 0
 			draw_sprite_ext(spr_debug_overlay, 1, list_pos[0] - 8, list_pos[1] - 5, 1, 1, 0, list_hover ? c_yellow : c_white, 1)
 
-		for (var i = 0; i < array_length(ObjNames); i++) {
+		for (var i = 0;i < array_length(ObjNames);i++) {
 			var key = ObjNames[i]
-			var value = (c_state == 2 && i > 0 && key != "(variable not found)") ? " : " + string(variable_instance_get(obj, key)) : ""
+			var value = (c_state == 2 && i > 0) ? " : " + string(variable_instance_get(obj, key)) : ""
 			var text = key + value
 			var y_pos = Y + i * string_height(" ")
-			var hover = (c_state == 1 || (c_state == 2 && i > 0 && key != "(variable not found)")) && m_check_range(Xx, y_pos, Xx + string_width(text), y_pos + string_height(text) - 5)
+			var hover = (c_state == 1 || (c_state == 2 && i > 0)) && m_check_range(Xx, y_pos, Xx + string_width(text), y_pos + string_height(text) - 5)
 			draw_text_outline(Xx, y_pos, text, , hover ? c_yellow : c_white, , , 2)
 		}
 
@@ -134,7 +132,7 @@ if view_debug {
 					}
 					for (var i = 0; i < array_length(ObjNames); i++) {
 						var key = ObjNames[i]
-						if c_state == 2 && i > 0 && key != "(variable not found)" {
+						if i > 0 {
 							var text = key + " : " + string(variable_instance_get(obj, key))
 							var y_pos = Y + i * string_height(" ")
 							if m_check_range(Xx, y_pos, Xx + string_width(text), y_pos + string_height(text) - 5) {
@@ -150,9 +148,13 @@ if view_debug {
 		}
 
 		if c_state > 0 && mouse_check_button(mb_left) {
-			list_pos[0] += mouse_x - oldmpos[0]
-			list_pos[1] += mouse_y - oldmpos[1]
+			list_pos[0] += device_mouse_x_to_gui(0) - oldmpos[0]
+			list_pos[1] += device_mouse_y_to_gui(0) - oldmpos[1]
 		}
 	}
+	}
+	catch(temp) {
+		c_state = 0
+	}
 }
-oldmpos = [mouse_x, mouse_y]
+oldmpos = [device_mouse_x_to_gui(0), device_mouse_y_to_gui(0)]

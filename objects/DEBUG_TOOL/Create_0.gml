@@ -30,16 +30,16 @@ show_variable = [
 c_state = 0
 obj = []
 list_pos = [0,0]
-oldmpos = [mouse_x,mouse_y]
+oldmpos = [device_mouse_x_to_gui(0),device_mouse_y_to_gui(0)]
 
 m_check = function(x,y,overlay=false) {
 	if overlay
-	return mouse_x/(room_width/640) >= x-6 && mouse_x/(room_width/640) <= x+6 && mouse_y/(room_height/480) >= y-6 && mouse_y/(room_height/480)<= y+6
+	return device_mouse_x_to_gui(0) >= x-6 && device_mouse_x_to_gui(0) <= x+6 && device_mouse_y_to_gui(0) >= y-6 && device_mouse_y_to_gui(0)<= y+6
 	else
-	return mouse_x/(room_width/640) >= x && mouse_x/(room_width/640) <= x+12 && mouse_y/(room_height/480) >= y && mouse_y/(room_height/480)<= y+12
+	return device_mouse_x_to_gui(0) >= x && device_mouse_x_to_gui(0) <= x+12 && device_mouse_y_to_gui(0) >= y && device_mouse_y_to_gui(0)<= y+12
 }
 m_check_range = function(x1,y1,x2,y2){
-	return mouse_x/(room_width/640) >= x1 && mouse_x/(room_width/640) <= x2 && mouse_y/(room_height/480) >= y1 && mouse_y/(room_height/480)<= y2
+	return device_mouse_x_to_gui(0) >= x1 && device_mouse_x_to_gui(0) <= x2 && device_mouse_y_to_gui(0) >= y1 && device_mouse_y_to_gui(0)<= y2
 }
 get_string_auto = function(prompt, default_value) { //chatgptにやらせたので不具合あるかも
     var type_str = typeof(default_value)
