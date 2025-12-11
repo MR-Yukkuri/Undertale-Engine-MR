@@ -121,7 +121,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.0.207",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"Undertale-Engine-MR",
   "resources":[
@@ -245,6 +245,7 @@
     {"id":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
     {"id":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
     {"id":{"name":"room_shop","path":"rooms/room_shop/room_shop.yy",},},
+    {"id":{"name":"Anim_Add","path":"scripts/Anim_Add/Anim_Add.yy",},},
     {"id":{"name":"Anim_Create","path":"scripts/Anim_Create/Anim_Create.yy",},},
     {"id":{"name":"Anim_CreateIter","path":"scripts/Anim_CreateIter/Anim_CreateIter.yy",},},
     {"id":{"name":"Anim_Destroy","path":"scripts/Anim_Destroy/Anim_Destroy.yy",},},

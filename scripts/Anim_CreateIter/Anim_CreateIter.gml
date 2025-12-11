@@ -55,15 +55,15 @@ function Anim_CreateIter() {
 						map[?ANIM_DATA.TARGET]=inst_find;
 						map[?ANIM_DATA.VAR_NAME]=VAR_NAME;
 						map[?ANIM_DATA.ACCESSORS]=ACCESSORS;
-						map[?ANIM_DATA.TWEEN]=TWEEN;
-						map[?ANIM_DATA.EASE]=EASE;
+						map[?ANIM_DATA.TWEEN]=[TWEEN];
+						map[?ANIM_DATA.EASE]=[EASE];
 						map[?ANIM_DATA.START]=START;
-						map[?ANIM_DATA.CHANGE]=CHANGE;
-						map[?ANIM_DATA.DURATION]=DURATION;
-						map[?ANIM_DATA.DELAY]=DELAY;
-						map[?ANIM_DATA.ARG_0]=ARG_0;
-						map[?ANIM_DATA.ARG_1]=ARG_1;
-						map[?ANIM_DATA.TIME]=0;
+						map[?ANIM_DATA.CHANGE]=[CHANGE];
+						map[?ANIM_DATA.DURATION]=[DURATION];
+						map[?ANIM_DATA.DELAY]=[DELAY];
+						map[?ANIM_DATA.ARG_0]=[ARG_0];
+						map[?ANIM_DATA.ARG_1]=[ARG_1];
+						map[?ANIM_DATA.TIME]=[0];
 					
 						proc_result+=1;
 					}
@@ -81,15 +81,15 @@ function Anim_CreateIter() {
 				map[?ANIM_DATA.TARGET]=global;
 				map[?ANIM_DATA.VAR_NAME]=VAR_NAME;
 				map[?ANIM_DATA.ACCESSORS]=ACCESSORS;
-				map[?ANIM_DATA.TWEEN]=TWEEN;
-				map[?ANIM_DATA.EASE]=EASE;
+				map[?ANIM_DATA.TWEEN]=[TWEEN];
+				map[?ANIM_DATA.EASE]=[EASE];
 				map[?ANIM_DATA.START]=START;
-				map[?ANIM_DATA.CHANGE]=CHANGE;
-				map[?ANIM_DATA.DURATION]=DURATION;
-				map[?ANIM_DATA.DELAY]=DELAY;
-				map[?ANIM_DATA.ARG_0]=ARG_0;
-				map[?ANIM_DATA.ARG_1]=ARG_1;
-				map[?ANIM_DATA.TIME]=0;
+				map[?ANIM_DATA.CHANGE]=[CHANGE];
+				map[?ANIM_DATA.DURATION]=[DURATION];
+				map[?ANIM_DATA.DELAY]=[DELAY];
+				map[?ANIM_DATA.ARG_0]=[ARG_0];
+				map[?ANIM_DATA.ARG_1]=[ARG_1];
+				map[?ANIM_DATA.TIME]=[0];
 			}
 		}else if(is_struct(TARGET)){
 			if(struct_exists(TARGET,VAR_NAME)){
@@ -102,15 +102,15 @@ function Anim_CreateIter() {
 				map[?ANIM_DATA.TARGET]=TARGET;
 				map[?ANIM_DATA.VAR_NAME]=VAR_NAME;
 				map[?ANIM_DATA.ACCESSORS]=ACCESSORS;
-				map[?ANIM_DATA.TWEEN]=TWEEN;
-				map[?ANIM_DATA.EASE]=EASE;
+				map[?ANIM_DATA.TWEEN]=[TWEEN];
+				map[?ANIM_DATA.EASE]=[EASE];
 				map[?ANIM_DATA.START]=START;
-				map[?ANIM_DATA.CHANGE]=CHANGE;
-				map[?ANIM_DATA.DURATION]=DURATION;
-				map[?ANIM_DATA.DELAY]=DELAY;
-				map[?ANIM_DATA.ARG_0]=ARG_0;
-				map[?ANIM_DATA.ARG_1]=ARG_1;
-				map[?ANIM_DATA.TIME]=0;
+				map[?ANIM_DATA.CHANGE]=[CHANGE];
+				map[?ANIM_DATA.DURATION]=[DURATION];
+				map[?ANIM_DATA.DELAY]=[DELAY];
+				map[?ANIM_DATA.ARG_0]=[ARG_0];
+				map[?ANIM_DATA.ARG_1]=[ARG_1];
+				map[?ANIM_DATA.TIME]=[0];
 			}
 		}
 	}
