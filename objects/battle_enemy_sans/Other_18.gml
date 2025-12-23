@@ -1,7 +1,7 @@
 ///@desc Turn Preparation Start
 //攻撃用オブジェクトを作成
 var turnnum,turn
-if attack_prog && Battle_GetMenuFightDamage() <= 0 && Battle_GetMenuChoiceEnemy() == Battle_ConvertEnemySlotToMenuChoiceEnemy(_enemy_slot) {
+if attack_prog && Battle_GetMenuFightDamage() <= 0 && Battle_GetMenuChoiceEnemy() == Battle_ConvertEnemySlotToMenuChoiceEnemy(_enemy_slot) && ((firstattack&&_turn>0)||!firstattack){
 	turnnum = irandom_range(atk_rand_min,atk_rand_max)
 	turn = asset_get_index(("battle_turn_test_rand" + string(turnnum))) //攻撃用オブジェクトの名前を取得する
 }

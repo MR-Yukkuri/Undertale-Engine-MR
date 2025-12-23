@@ -5,3 +5,4 @@ follow_hspeed = 0
 follow_vspeed = 0
 hspeed = 0
 vspeed = 0
+is_out = true

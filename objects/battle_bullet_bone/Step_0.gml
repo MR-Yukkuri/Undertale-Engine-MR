@@ -8,13 +8,15 @@ for(var i=0;i<array_length(collision);i++) {
 if point_in_triangle(battle_soul.x,battle_soul.y,collision[0,0],collision[0,1],collision[1,0],collision[1,1],collision[2,0],collision[2,1]) || point_in_triangle(battle_soul.x,battle_soul.y,collision[2,0],collision[2,1],collision[3,0],collision[3,1],collision[1,0],collision[1,1])&&image_alpha>0.6&&hit{
 	Battle_CallSoulEventBulletCollision();
 }
-if instance_exists(battle_soul_yellow_bullet) && ((point_in_triangle(battle_soul_yellow_bullet.x,battle_soul_yellow_bullet.y,collision[0,0],collision[0,1],collision[1,0],collision[1,1],collision[2,0],collision[2,1]) || point_in_triangle(battle_soul_yellow_bullet.x,battle_soul_yellow_bullet.y,collision[2,0],collision[2,1],collision[3,0],collision[3,1],collision[1,0],collision[1,1]))&&can_break){
+if instance_exists(battle_soul_yellow_bullet)&&can_break {
 	with(battle_soul_yellow_bullet) {
 		if (point_in_triangle(x,y,collision[0,0],collision[0,1],collision[1,0],collision[1,1],collision[2,0],collision[2,1]) || point_in_triangle(battle_soul_yellow_bullet.x,battle_soul_yellow_bullet.y,collision[2,0],collision[2,1],collision[3,0],collision[3,1],collision[1,0],collision[1,1])) {
 			instance_destroy()
+			snd_play(snd_mtt_burst)
+			with(other)
+				event_user(3)
 		}
 	}
-	event_user(3)
-	snd_play(snd_mtt_burst)
+	
 }
 image_angle+=rotate

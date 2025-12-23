@@ -16,3 +16,4 @@ beam_yscale = 0
 beam_scale = 0
 collision_scale = 0.8
 image_speed = 0
+is_out = false
