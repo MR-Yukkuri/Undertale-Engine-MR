@@ -1,3 +1,4 @@
+depth = out ? DEPTH_BATTLE.BULLET_OUTSIDE_LOW : DEPTH_BATTLE.BULLET
 if(place_meeting(x,y,battle_soul))&&image_alpha>0.6&&hit{
 	Battle_CallSoulEventBulletCollision();
 	if hit_destroy {
@@ -6,15 +7,13 @@ if(place_meeting(x,y,battle_soul))&&image_alpha>0.6&&hit{
 }
 if instance_exists(battle_soul_yellow_bullet) && can_break{
 	with(battle_soul_yellow_bullet) {
-		if place_meeting(x,y,other.id) {
+		if collision_line(xprevious,yprevious,x,y,other.id,false,true) {
 			instance_destroy()
 			snd_play(snd_mtt_burst)
 			with(other)
 				event_user(3)
 		}
 	}
-	event_user(3)
-	snd_play(snd_mtt_burst)
 }
 if can_prevent && instance_exists(battle_soul_green) {
 	var des = true
