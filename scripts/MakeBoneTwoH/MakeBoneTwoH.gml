@@ -13,7 +13,7 @@
 ///@desc 左右から生えた骨を作成します。
 function MakeBoneTwoH(x,y,range=40,vspeed=0,color=COLOR.WHITE,head=true,sin_size=0,sin_speed=0.1,use_cos=false,sin_offset=0,follow=false,follow_target=battle_board){
 	var Len = [x-(follow_target.x-follow_target.left),x-(follow_target.x+follow_target.right)],b=[]
-	b[0] = MakeBoneLeft(y,max(abs(Len[0])-range/2,1),0,vspeed,color,,,head,,,sin_size,sin_speed,use_cos,sin_offset,follow,follow_target)
-	b[1] = MakeBoneRight(y,max(abs(Len[1])-range/2,1),0,vspeed,color,,,head,,,sin_size,sin_speed,use_cos,sin_offset+pi,follow,follow_target)
+	b[0] = MakeBoneLeft(y,max(abs(Len[0])-range/2,1),0,vspeed,,color,,head,,,sin_size,sin_speed,use_cos,sin_offset,follow,follow_target)
+	b[1] = MakeBoneRight(y,max(abs(Len[1])-range/2,1),0,vspeed,,color,,head,,,sin_size,sin_speed,use_cos,sin_offset+pi,follow,follow_target)
 	return b
 }

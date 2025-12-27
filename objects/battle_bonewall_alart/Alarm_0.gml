@@ -8,17 +8,9 @@ switch(dir) {
 		for(var i=0;fx-follow_target.left-2+space*i<fx+follow_target.right+5;i++) {
 			if dir==DIR.DOWN {
 				bone[i] = MakeBoneBottom(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
-				if follow
-				bone[i].follow_y+=6
-				else
-				bone[i].y+=6
 			}
 			else {
 				bone[i] = MakeBoneTop(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
-				if follow
-				bone[i].follow_y-=6
-				else
-				bone[i].y-=6
 			}
 			if follow
 			MakeShaker(bone[i],"follow_x",3,,,,5)
@@ -31,17 +23,9 @@ switch(dir) {
 		for(var i=0;fy-follow_target.up-2+space*i<fy+follow_target.down+5;i++) {
 			if dir == DIR.LEFT {
 				bone[i] = MakeBoneLeft(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
-				if follow
-				bone[i].follow_x-=6
-				else
-				bone[i].x-=6
 			}
 			else {
 				bone[i] = MakeBoneRight(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
-				if follow
-				bone[i].follow_x+=6
-				else
-				bone[i].x+=6
 			}
 			if follow
 			MakeShaker(bone[i],"follow_y",3,,,,5)

@@ -1,5 +1,4 @@
 event_inherited()
-adjusted_length = true
 length = 50
 origin = 0
 head_type = 0

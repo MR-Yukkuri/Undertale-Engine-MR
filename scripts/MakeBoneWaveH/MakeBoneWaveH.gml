@@ -25,7 +25,7 @@ function MakeBoneWaveH(x,y,_vspeed,_size=50,_center_space=40,_wave_size=20,_spac
 		space_cycle = _space_cycle
 		count = _wave_offset
 		use_cos = _use_cos
-		color = COLOR.WHITE
+		color = _color
 		head = _head
 		follow = _follow
 		follow_target = _follow_target

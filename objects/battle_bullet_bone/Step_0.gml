@@ -2,7 +2,7 @@ depth = out ? DEPTH_BATTLE.BULLET_OUTSIDE_LOW : DEPTH_BATTLE.BULLET
 var head_total_w = (head_type == 0 ? 12 : 6)
 var sin_part = (use_cos ? (cos(stime)*sinsize) : (sin(stime)*sinsize))
 var total_len_raw = abs(length)+sin_part
-var subtracted_w = (adjusted_length ? head_total_w : 0)
+var subtracted_w = head_total_w
 var length_result = max(0,total_len_raw-subtracted_w)
 
 if length_result > 0 {

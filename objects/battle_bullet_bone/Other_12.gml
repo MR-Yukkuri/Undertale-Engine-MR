@@ -1,39 +1,37 @@
 var head_total_w = (head_type == 0 ? 12 : 6)
 var sin_part = (use_cos ? (cos(stime)*sinsize) : (sin(stime)*sinsize))
 var total_len_raw = abs(length)+sin_part
-var subtracted_w = (adjusted_length ? head_total_w : 0)
+var subtracted_w = head_total_w
 var length_result = max(0,total_len_raw-subtracted_w)
 var dw_left = 6
 var dw_right = 6
 var anchor_left_to_tip = false
 var anchor_right_to_tip = false
-if adjusted_length {
-	if head_type == 0 {
-		if total_len_raw <= 12 {
-			dw_left = clamp(total_len_raw/2,0,6)
-			dw_right = clamp(total_len_raw/2,0,6)
-		} else if origin == 1 {
-			dw_left = clamp(total_len_raw-6,0,6)
-			dw_right = clamp(total_len_raw,0,6)
-			anchor_left_to_tip = true
-			anchor_right_to_tip = false
-		} else if origin == 2 {
-			dw_left = clamp(total_len_raw,0,6)
-			dw_right = clamp(total_len_raw-6,0,6)
-			anchor_left_to_tip = false
-			anchor_right_to_tip = true
-		} else {
-			dw_left = clamp(total_len_raw/2,0,6)
-			dw_right = clamp(total_len_raw/2,0,6)
-			anchor_left_to_tip = false
-			anchor_right_to_tip = false
-		}
-	} else {
-		dw_left = clamp(total_len_raw,0,6)
+if head_type == 0 {
+	if total_len_raw <= 12 {
+		dw_left = clamp(total_len_raw/2,0,6)
+		dw_right = clamp(total_len_raw/2,0,6)
+	} else if origin == 1 {
+		dw_left = clamp(total_len_raw-6,0,6)
 		dw_right = clamp(total_len_raw,0,6)
+		anchor_left_to_tip = true
+		anchor_right_to_tip = false
+	} else if origin == 2 {
+		dw_left = clamp(total_len_raw,0,6)
+		dw_right = clamp(total_len_raw-6,0,6)
+		anchor_left_to_tip = false
+		anchor_right_to_tip = true
+	} else {
+		dw_left = clamp(total_len_raw/2,0,6)
+		dw_right = clamp(total_len_raw/2,0,6)
 		anchor_left_to_tip = false
 		anchor_right_to_tip = false
 	}
+} else {
+	dw_left = clamp(total_len_raw,0,6)
+	dw_right = clamp(total_len_raw,0,6)
+	anchor_left_to_tip = false
+	anchor_right_to_tip = false
 }
 
 var xx,yy,angle,R
@@ -71,7 +69,7 @@ if length_result > 0 {
 	} else if origin == 2 {
 		dist_left = len-total_len_raw
 		dist_right = len
-	} else { // Center
+	} else {
 		dist_left = len-total_len_raw/2
 		dist_right = len+total_len_raw/2
 	}
