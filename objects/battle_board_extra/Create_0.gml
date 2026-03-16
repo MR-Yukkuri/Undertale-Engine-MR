@@ -74,6 +74,8 @@ function relativeContains(_x, _y, _listVertex = listVertex) {
 	for(var i = 0; i < count; i++) {
 		if(intersections[i] > xx)
 			return isInside;
+		if(intersections[i] == xx)
+			return true;
 		isInside = !isInside;
 	}
     return false;
@@ -256,18 +258,126 @@ function replaceSurfaceAlpha(_surf, _xOffset = 0, _yOffset = 0, _fillAlpha = tru
 	surface_reset_target();
 }
 
+// 用于绘制内部填充
+function drawFill(_color = undefined, _alpha = undefined) {
+	var vsin = dsin(-rot), vcos = dcos(-rot);
+	var size = ds_list_size(listDivideIndex);
+	var color = (_color != undefined) ? _color : ((instance_exists(battle_board)) ? battle_board.color_frame : c_white);
+	var alpha = (_alpha != undefined) ? _alpha : ((instance_exists(battle_board)) ? battle_board.alpha_frame : 1);
+	
+	draw_set_color(color);
+	draw_set_alpha(alpha);
+	draw_primitive_begin(pr_trianglelist);
+	for(var i = 0; i < size; i++) {	//遍历所有的三角
+		var di = listDivideIndex[| i];
+		for(var j = 0; j < 3; j++) {
+			var pos = listVertex[| di[j]];
+			var resultx = pos[0] * vcos - pos[1] * vsin;
+			var resulty = pos[0] * vsin + pos[1] * vcos;
+			draw_vertex(x + resultx, y + resulty);
+		}
+	}
+	draw_primitive_end();
+	draw_set_color(c_white);
+	draw_set_alpha(1);
+}
+
 // 用于绘制边框，如果isAutoDrawBorder为true，则会自动调用
 function drawBorder() {
-	var vsin = dsin(-rot), vcos = dcos(-rot);
-	for(var i = 0; i < ds_list_size(listVertex); i++) {
-		var a = listVertex[| i], b = listVertex[| iloop(i + 1)];
-		var ax = a[0] * vcos - a[1] * vsin;
-		var ay = a[0] * vsin + a[1] * vcos;
-		var bx = b[0] * vcos - b[1] * vsin;
-		var by = b[0] * vsin + b[1] * vcos;
-		
-		draw_sprite_ext(spr_pixel,0,x + ax - 5*cos(degtorad(floor(point_direction(ax,ay,bx,by)))),y + ay + 5*sin(degtorad(floor(point_direction(ax,ay,bx,by)))),5,point_distance(ax,ay,bx,by)+5+5*cos(degtorad((point_direction(ax,ay,bx,by)%45))),point_direction(ax,ay,bx,by)+90,battle_board.color_frame,battle_board.alpha_frame);
-	}
+    var size = ds_list_size(listVertex);
+    if (size < 2) return;
+
+    var thickness = 5;
+    var vsin = dsin(-rot), vcos = dcos(rot);
+    
+    var points_x = array_create(size);
+    var points_y = array_create(size);
+    for (var i = 0; i < size; i++) {
+        var p = listVertex[| i];
+        points_x[i] = x + (p[0] * vcos - p[1] * vsin);
+        points_y[i] = y + (p[0] * vsin + p[1] * vcos);
+    }
+
+    var color = (instance_exists(battle_board)) ? battle_board.color_frame : c_white;
+    var alpha = (instance_exists(battle_board)) ? battle_board.alpha_frame : 1;
+
+    draw_set_color(color);
+    draw_set_alpha(alpha);
+    
+    draw_primitive_begin(pr_trianglestrip);
+    
+    var dir_x = array_create(size);
+    var dir_y = array_create(size);
+    for (var i = 0; i < size; i++) {
+        var next = (i + 1) % size;
+        var dx = points_x[next] - points_x[i];
+        var dy = points_y[next] - points_y[i];
+        var len = sqrt(dx * dx + dy * dy);
+        if (len > 0.0001) {
+            dir_x[i] = dx / len;
+            dir_y[i] = dy / len;
+        } else {
+            dir_x[i] = 0;
+            dir_y[i] = 0;
+        }
+    }
+
+    for (var i = 0; i <= size; i++) {
+        var curr = i % size;
+        var prev_idx = (curr - 1 + size) % size;
+        var next_idx = curr;
+
+        var dx1 = dir_x[prev_idx], dy1 = dir_y[prev_idx];
+        var count = 0;
+        while (abs(dx1) + abs(dy1) < 0.0001 && count < size) {
+            prev_idx = (prev_idx - 1 + size) % size;
+            dx1 = dir_x[prev_idx];
+            dy1 = dir_y[prev_idx];
+            count++;
+        }
+        
+        var dx2 = dir_x[next_idx], dy2 = dir_y[next_idx];
+        count = 0;
+        while (abs(dx2) + abs(dy2) < 0.0001 && count < size) {
+            next_idx = (next_idx + 1) % size;
+            dx2 = dir_x[next_idx];
+            dy2 = dir_y[next_idx];
+            count++;
+        }
+
+        var nx1 = -dy1, ny1 = dx1;
+        var nx2 = -dy2, ny2 = dx2;
+
+        var mx = nx1 + nx2;
+        var my = ny1 + ny2;
+        var mlen = sqrt(mx * mx + my * my);
+        
+        if (mlen < 0.001) {
+            mx = nx1;
+            my = ny1;
+            var dot = 1;
+        } else {
+            mx /= mlen;
+            my /= mlen;
+            var dot = mx * nx1 + my * ny1;
+        }
+
+        if (abs(dot) > 0.1) {
+            var miter_len = (thickness / 2) / dot;
+            miter_len = clamp(miter_len, 0, thickness * 2);
+            mx *= miter_len;
+            my *= miter_len;
+        } else {
+            mx *= (thickness / 2);
+            my *= (thickness / 2);
+        }
+        draw_vertex(points_x[curr], points_y[curr]);
+        draw_vertex(points_x[curr] - mx * 2, points_y[curr] - my * 2);
+    }
+    
+    draw_primitive_end();
+    draw_set_color(c_white);
+    draw_set_alpha(1);
 }
 // 辅助函数，用于当_index超出边界时循环
 // 因为都是稍微超出，所以只考虑了稍微超出时的情况

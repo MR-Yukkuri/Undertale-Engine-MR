@@ -1,8 +1,9 @@
 global.debug = true
 global.infhp = false
 global.kr = false
-global.color_damagetype = false
+global.color_damagetype = false //色骨の判定方法　false:座標参照 true:キー入力参照
 global.overlay = false
+global.item_type = 0 //アイテム選択の種類 0:公式日本語版(TMLデフォルト) 1:公式英語版
 Anim_Init();
 
 Console_Init();

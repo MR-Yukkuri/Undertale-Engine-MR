@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_item_equip",
+  "%Name":"snd_hero",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.16399093,
+  "duration":0.7546485,
   "exportDir":"",
-  "name":"snd_item_equip",
+  "name":"snd_hero",
   "parent":{
     "name":"SFX",
     "path":"folders/Sounds/SFX.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_item_equip",
+  "soundFile":"snd_hero.wav",
   "volume":1.0,
 }

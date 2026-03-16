@@ -178,27 +178,77 @@ if(_state==BATTLE_STATE.MENU){
 	//物品
 	if(_menu==BATTLE_MENU.ITEM){
 		//上/下
-		if(Input_IsPressed(INPUT.UP)){
-			var slot=Battle_GetMenuChoiceItem()-1;
-			if(slot>=0){
-				audio_play_sound(snd_menu_switch,0,false);
-				Battle_SetMenuChoiceItem(slot);
+		if global.item_type == 0 {
+			if(Input_IsPressed(INPUT.UP)){
+				var slot=Battle_GetMenuChoiceItem()-1;
+				if(slot>=0){
+					audio_play_sound(snd_menu_switch,0,false);
+					Battle_SetMenuChoiceItem(slot);
+				}
+			}else if(Input_IsPressed(INPUT.DOWN)){
+				var slot=Battle_GetMenuChoiceItem()+1;
+				if(slot<Item_GetNumber()){
+					audio_play_sound(snd_menu_switch,0,false);
+					Battle_SetMenuChoiceItem(slot);
+				}
+			}else if(Input_IsPressed(INPUT.CANCEL)){
+				Battle_SetMenu(BATTLE_MENU.BUTTON);
+			}else if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
+				Battle_EndMenu();
 			}
-		}else if(Input_IsPressed(INPUT.DOWN)){
-			var slot=Battle_GetMenuChoiceItem()+1;
-			if(slot<Item_GetNumber()){
-				audio_play_sound(snd_menu_switch,0,false);
-				Battle_SetMenuChoiceItem(slot);
-			}
-		}else if(Input_IsPressed(INPUT.CANCEL)){
-			Battle_SetMenu(BATTLE_MENU.BUTTON);
-		}else if(Input_IsPressed(INPUT.CONFIRM)){
-			audio_play_sound(snd_menu_confirm,0,false);
-			Battle_EndMenu();
-		}
 		
-		battle_soul.x=battle_board.x-battle_board.left-5+40;
-		battle_soul.y=battle_board.y-battle_board.up-5+36+32*(Battle_GetMenuChoiceItem()-_menu_choice_item_first);
+			battle_soul.x=battle_board.x-battle_board.left-5+40;
+			battle_soul.y=battle_board.y-battle_board.up-5+36+32*(Battle_GetMenuChoiceItem()-_menu_choice_item_first);
+		}
+		else if global.item_type == 1 {
+			if(Input_IsPressed(INPUT.UP)||Input_IsPressed(INPUT.DOWN)){
+				var slot=Battle_GetMenuChoiceItem();
+				if (slot%4)div 2 == 0 {
+					slot+=2
+				}
+				else {
+					slot-=2
+				}
+				audio_play_sound(snd_menu_switch,0,false);
+				Battle_SetMenuChoiceItem(slot);
+			}else if Input_IsPressed(INPUT.LEFT) {
+				var slot=Battle_GetMenuChoiceItem();
+				if slot%2 == 0 {
+					if slot-3<0
+						slot+=5
+					else
+						slot-=3
+				}
+				else {
+					slot-=1
+				}
+				audio_play_sound(snd_menu_switch,0,false);
+				Battle_SetMenuChoiceItem(slot);
+			}else if Input_IsPressed(INPUT.RIGHT) {
+				var slot=Battle_GetMenuChoiceItem();
+				if slot%2 {
+					if slot+3>7
+						slot-=5
+					else
+						slot+=3
+				}
+				else {
+					slot+=1
+				}
+				audio_play_sound(snd_menu_switch,0,false);
+				Battle_SetMenuChoiceItem(slot);
+			}
+			else if(Input_IsPressed(INPUT.CANCEL)){
+				Battle_SetMenu(BATTLE_MENU.BUTTON);
+			}else if(Input_IsPressed(INPUT.CONFIRM)){
+				audio_play_sound(snd_menu_confirm,0,false);
+				Battle_EndMenu();
+			}
+		
+			battle_soul.x=battle_board.x-battle_board.left-5+40+((Battle_GetMenuChoiceItem()-(4*(Battle_GetMenuChoiceItem()div 4)))%2?256:0);
+			battle_soul.y=battle_board.y-battle_board.up-5+36+32*((Battle_GetMenuChoiceItem()-(4*(Battle_GetMenuChoiceItem()div 4)))div 2);
+		}
 	}else
 	
 	//仁慈

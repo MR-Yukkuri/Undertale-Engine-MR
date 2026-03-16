@@ -22,6 +22,17 @@ function Battle_SetBoardSize() {
 	if(argument_count>=7){
 		EASE=argument[6];
 	}
+    if (battle_board.is_polygon) {
+        var rect = [[-L, -U], [R, -U], [R, D], [-L, D]];
+        Battle_SetBoardPolygonCustom(rect, TIME, TWEEN, EASE, true);
+        battle_board.up = U;
+        battle_board.down = D;
+        battle_board.left = L;
+        battle_board.right = R;
+        return true;
+    }
+
+	battle_board.is_polygon = false;
 	if(is_real(U)){
 		if(TIME==0){
 			battle_board.up=U;
@@ -53,6 +64,3 @@ function Battle_SetBoardSize() {
 
 	return true;
 }
-
-//旧版ute中的脚本，后来被糖萌芦删除了，但它确实好用
-//Script in older version Undertale Engine,it was deleted by TML later but I think it's really useful

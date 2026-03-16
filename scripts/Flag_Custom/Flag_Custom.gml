@@ -26,7 +26,13 @@ function Flag_Custom() {
 
 	Item_SetWeapon(item_stick);
 	Item_SetArmor(item_bandage);
-	Item_Add(item_tml);
-
+	Item_Add(item_pie);
+	Item_Add(item_cupmen);
+	Item_Add(item_steak);
+	Item_Add(item_yuki);
+	Item_Add(item_yuki);
+	Item_Add(item_yuki);
+	Item_Add(item_hero);
+	Item_Add(item_hero);
 
 }

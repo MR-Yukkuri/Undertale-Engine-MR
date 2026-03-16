@@ -34,16 +34,25 @@ for(var i = 0; i < global.borderCount; i++){
 	}
 }
 surface_set_target(sur)
-for(var i = 0; i < global.borderCount; i++){	//遍历所有框，应用遮罩效果
+for(var i = 0; i < global.borderCount; i++){
 	bb = ds_list_find_value(global.borders_list,i);
 	if(instance_exists(bb)){
-		bb.replaceSurfaceAlpha(_surface, 0, 0, i == 0);
 		with(bb){
 			drawBorder();
 		}
 	}
 }
+gpu_set_blendmode(bm_subtract);
+for(var i = 0; i < global.borderCount; i++){
+	bb = ds_list_find_value(global.borders_list,i);
+	if(instance_exists(bb)){
+		with(bb){
+			drawFill();
+		}
+	}
+}
+gpu_set_blendmode(bm_normal);
 surface_reset_target()
-draw_surface_outline(sur,0,0,,2)
 draw_surface(_surface,0,0);
+draw_surface_outline(sur,0,0,,2)
 draw_surface(_surface3,0,0);

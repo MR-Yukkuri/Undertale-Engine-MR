@@ -12,7 +12,9 @@ function contains(_x, _y) {
 function limit(_x, _y) {
 	_x -= x;
 	_y -= y;
-	var mul = radius / sqrt(sqr(_x) + sqr(_y));
+    var dist = sqrt(sqr(_x) + sqr(_y));
+    if (dist <= 0) return [x + radius, y];
+	var mul = radius / dist;
 	return [_x * mul + x, _y * mul + y];
 }
 
@@ -31,14 +33,48 @@ function replaceSurfaceAlpha(_surf, _xOffset = 0, _yOffset = 0, _fillAlpha = tru
 	
 	//挖空
 	draw_set_alpha(1);
-	draw_circle(x, y, radius, false);
+	draw_circle(x + _xOffset, y + _yOffset, radius, false);
 
 	//恢复默认
 	gpu_set_blendenable(true);
 	gpu_set_colorwriteenable(true, true, true, true);
 	surface_reset_target();
 }
-function drawBorder(){
-	draw_circle_color(x,y,radius+5,battle_board.color_frame,battle_board.color_frame,0);
-	draw_circle_color(x,y,radius,battle_board.color_bg,battle_board.color_bg,0);
+
+function drawFill(_color = undefined, _alpha = undefined) {
+    var color = (_color != undefined) ? _color : ((instance_exists(battle_board)) ? battle_board.color_frame : c_white);
+    var alpha = (_alpha != undefined) ? _alpha : ((instance_exists(battle_board)) ? battle_board.alpha_frame : 1);
+    
+    draw_set_color(color);
+    draw_set_alpha(alpha);
+    draw_circle(x, y, radius, false);
+    draw_set_color(c_white);
+    draw_set_alpha(1);
+}
+
+function drawBorder() {
+    var thickness = 5;
+    var sides = 64;
+    var color = (instance_exists(battle_board)) ? battle_board.color_frame : c_white;
+    var alpha = (instance_exists(battle_board)) ? battle_board.alpha_frame : 1;
+
+    draw_set_color(color);
+    draw_set_alpha(alpha);
+    
+    draw_primitive_begin(pr_trianglestrip);
+    for (var i = 0; i <= sides; i++) {
+        var angle = (i / sides) * 360;
+        var dx = dcos(angle), dy = dsin(angle);
+        
+        // Draw from the radius to the outside
+        var r_out = radius + thickness;
+        var r_in = radius;
+        
+        draw_vertex(x + dx * r_out, y + dy * r_out);
+        draw_vertex(x + dx * r_in, y + dy * r_in);
+    }
+    draw_primitive_end();
+    
+    draw_set_color(c_white);
+    draw_set_alpha(1);
 }

@@ -59,6 +59,7 @@ function Lang_LoadString() {
 			#region text
 				ds_map_add(global._gmu_lang_string,"battle.menu.mercy.spare","* Spare");
 				ds_map_add(global._gmu_lang_string,"battle.menu.mercy.flee","* Flee");
+				ds_map_add(global._gmu_lang_string,"battle.menu.item.page","PAGE");
 				ds_map_add(global._gmu_lang_string,"battle.result.won","* You WON!&* You earned {insert EXP} EXP and {insert GOLD} GOLD.");
 				ds_map_add(global._gmu_lang_string,"battle.result.fled.0","* Escaped...");
 				ds_map_add(global._gmu_lang_string,"battle.result.fled.1","* I'm outta here.");
@@ -196,6 +197,7 @@ function Lang_LoadString() {
 			#region text
 				ds_map_add(global._gmu_lang_string,"battle.menu.mercy.spare","＊ にがす");
 				ds_map_add(global._gmu_lang_string,"battle.menu.mercy.flee","＊ にげる");
+				ds_map_add(global._gmu_lang_string,"battle.menu.item.page","ページ");
 				ds_map_add(global._gmu_lang_string,"battle.result.won","＊ You WON!&＊ {insert EXP}EXPと{insert GOLD}ゴールドを  かくとく！");
 				ds_map_add(global._gmu_lang_string,"battle.result.fled.0","＊ バトルからにげた…");
 				ds_map_add(global._gmu_lang_string,"battle.result.fled.1","* ＊ さようなら。");
@@ -206,7 +208,7 @@ function Lang_LoadString() {
 				ds_map_add(global._gmu_lang_string,"item.eat","＊ {insert ITEM}を  たべた。");
 				ds_map_add(global._gmu_lang_string,"item.equip","＊ {insert ITEM}を  そうびした。");
 				ds_map_add(global._gmu_lang_string,"item.heal.part","＊ HPが  {insert HP}かいふくした！");
-				ds_map_add(global._gmu_lang_string,"item.heal.all","＊ HPが  まんたんに　なった。");
+				ds_map_add(global._gmu_lang_string,"item.heal.all","＊ HPが  まんたんに  なった。");
 				ds_map_add(global._gmu_lang_string,"item.drop.0","＊ {insert ITEM}を  すてた。");
 				ds_map_add(global._gmu_lang_string,"item.drop.1","＊ {insert ITEM}に  そっと&  わかれを  つげた。");
 				ds_map_add(global._gmu_lang_string,"item.drop.2","＊ {insert ITEM}をじめんに&   おいて  「おつかれさま」と&   なでてあげた。");
@@ -217,7 +219,7 @@ function Lang_LoadString() {
 				ds_map_add(global._gmu_lang_string,"item.stick.use","＊ ぼうきれを  とおくへ  なげすてた。{sleep 20}&＊ そして  ひろいあげた。");
 				ds_map_add(global._gmu_lang_string,"item.bandage.name","ほうたい");
 				ds_map_add(global._gmu_lang_string,"item.bandage.info","＊ ほうたい - 10HPかいふく&＊ なんどか  しようされた  けいせきが&   ある。");
-				ds_map_add(global._gmu_lang_string,"item.bandage.use.0","＊ ほうたいを　まきなおした。");
+				ds_map_add(global._gmu_lang_string,"item.bandage.use.0","＊ ほうたいを  まきなおした。");
 				ds_map_add(global._gmu_lang_string,"item.bandage.use.1","＊ まだ  ちょっと  ユルユルだ。");
 				ds_map_add(global._gmu_lang_string,"item.toy_knife.name","おもちゃのナイフ");
 				ds_map_add(global._gmu_lang_string,"item.toy_knife.info","＊ おもちゃのナイフ - ぶきAT3&＊ プラスチックせい。&   さいきんは  レアもの。");
