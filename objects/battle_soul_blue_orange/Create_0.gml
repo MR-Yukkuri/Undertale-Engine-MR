@@ -1,5 +1,4 @@
 event_inherited()
-image_blend = c_blue
 moveable = 1
 dir = 270
 move = 0
@@ -15,6 +14,8 @@ gravity_jump = 0.15
 gravity_fall = 0.15
 jump_speed = 4.8
 max_speed = 20
+lastkey = -1
+t = 0
 dir_old = dir
 /*
 这是一个甩灵魂的代码示例，最后四行不能漏掉

@@ -51,18 +51,26 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 			break;
 		}
 	}
-	
+	if t%2==0 {
+		with(instance_create_depth(x,y,depth+1,battle_soul_orange_af)) {
+			image_blend = c_white
+			sprite_index = other.sprite_index
+			image_angle = other.image_angle
+		}
+	}
 	var SPD=Player_GetSpdTotal()
 	var SPD=(Input_IsHeld(INPUT.CANCEL) ? SPD/2 : SPD);
-	if dir_old != dir {
-		move = 0
-	}
-	dir_old = dir
 	xx = 0;
 	yy = 0;
 	ii = 0;
 	jump_input = 0;
 	opposite_dir = 0;
+	if dir_old != dir {
+		if abs(dir_old-dir)!=180
+			lastkey = -1
+		move = 0
+	}
+	dir_old = dir
 	if(dir = 0){
 		xx = 1;
 		ii = isInside2;
@@ -117,10 +125,6 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	//碰到顶时强制下落
 	
 	if(jump_state = 1){
-		if(Input_IsReleased(jump_input)){
-			jump_state = 2;
-			move = -1;
-		}
 		if(move >= 0){
 			jump_state = 2;
 		}
@@ -214,105 +218,106 @@ if(Battle_GetState()==BATTLE_STATE.IN_TURN && moveable){
 	}
 
 	global.is_moving = 0;
-	if(Input_IsHeld(INPUT.LEFT)){
+	if(move < 0){
+		move += gravity_jump;
+	}
+	if(jump_state = 0){
+		move = -jump_speed;
+		jump_state = 1;
+	}
+	if(Input_IsPressed(INPUT.LEFT)){
 		switch(dir){
-			case 0:
-				if(move < 0){
-					move += gravity_jump;
+			case 180:
+				if move < 0 && jump_state == 1 {
+					move = 0
 				}
-				if(jump_state = 0){
-					move = -jump_speed;
-					jump_state = 1;
-				}
-				break;
-			
+				break
 			case 90:
 			case 270:
-				repeat(10){
-					if!(position_meeting(x-sprite_width/2,y,block)){
-						x -= SPD/10;
-					}
-					else{
-						x = xprevious;	
-					}
-				}
+				lastkey = 0
 				break;
 		}
 	}
-	if(Input_IsHeld(INPUT.RIGHT)){
+	if(Input_IsPressed(INPUT.RIGHT)){
 		switch(dir){
-			case 180:
-				if(move < 0){
-					move += gravity_jump;
+			case 0:
+				if move < 0 && jump_state == 1 {
+					move = 0
 				}
-				if(jump_state = 0){
-					move = -jump_speed;
-					jump_state = 1;
-				}
-				break;
-			
+				break
 			case 90:
 			case 270:
-				repeat(10){
-					if!(position_meeting(x+sprite_width/2,y,block)){
-					  x += SPD/10;
-					}
-					else{
-						x = xprevious;	
-					}
-				}
+				lastkey = 1
 				break;
 		}
 	}
-	if(Input_IsHeld(INPUT.UP)){
+	if(Input_IsPressed(INPUT.UP)){
 		switch(dir){
-			case 270:
-				if(move < 0){
-					move += gravity_jump;
+			case 90:
+				if move < 0 && jump_state == 1 {
+					move = 0
 				}
-				if(jump_state = 0){
-					move = -jump_speed;
-					jump_state = 1;
-				}
-				break;
-			
+				break
 			case 0:
 			case 180:
-				repeat(10){
-					if!(position_meeting(x,y-sprite_height/2,block)){
-					  y -= SPD/10;
-					}
-					else{
-						y = yprevious;	
-					}
-				}
+				lastkey = 2
 				break;
 		}
 	}
-	if(Input_IsHeld(INPUT.DOWN)){
+	if(Input_IsPressed(INPUT.DOWN)){
 		switch(dir){
-			case 90:
-				if(move < 0){
-					move += gravity_jump;
+			case 270:
+				if move < 0 && jump_state == 1 {
+					move = 0
 				}
-				if(jump_state = 0){
-					move = -jump_speed;
-					jump_state = 1;
-				}
-				break;
-			
+				break
 			case 0:
 			case 180:
-				repeat(10){
-					if!(position_meeting(x,y+sprite_height/2,block)){
-					  y += SPD/10;
-					}
-					else{
-						y = yprevious;	
-					}
-				}
+				lastkey = 3
 				break;
 		}
 	}
 	//移动和开始跳跃
+	switch lastkey {
+		case 0:
+			repeat(10){
+				if!(position_meeting(x-sprite_width/2,y,block)){
+					x -= SPD/10;
+				}
+				else{
+					x = xprevious;	
+				}
+			}
+			break
+		case 1:
+			repeat(10){
+				if!(position_meeting(x+sprite_width/2,y,block)){
+					x += SPD/10;
+				}
+				else{
+					x = xprevious;	
+				}
+			}
+			break
+		case 2:
+			repeat(10){
+				if!(position_meeting(x,y-sprite_height/2,block)){
+					y -= SPD/10;
+				}
+				else{
+					y = yprevious;	
+				}
+			}
+			break
+		case 3:
+			repeat(10){
+				if!(position_meeting(x,y+sprite_height/2,block)){
+					y += SPD/10;
+				}
+				else{
+					y = yprevious;	
+				}
+			}
+			break
+	}
 }
