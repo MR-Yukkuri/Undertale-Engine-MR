@@ -53,6 +53,6 @@ for(var i = 0; i < global.borderCount; i++){
 }
 gpu_set_blendmode(bm_normal);
 surface_reset_target()
-draw_surface(_surface,0,0);
 draw_surface_outline(sur,0,0,,2)
+draw_surface(_surface,0,0);
 draw_surface(_surface3,0,0);
