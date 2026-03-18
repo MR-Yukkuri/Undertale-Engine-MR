@@ -4,6 +4,8 @@ function SlamLeft(anim_target=battle_enemy){
 var TARGET = anim_target
 Battle_SetSoul(battle_soul_blue)
 battle_soul.dir = DIR.LEFT;
+battle_soul.dir_old = DIR.LEFT
+battle_soul.image_angle = -90
 battle_soul.move = 6;
 battle_soul.impact = 1;
 battle_soul.jump_state = 2;

@@ -14,3 +14,6 @@ siner = 0.5
 sinsize = 0
 stime = 0
 use_cos = false
+is_paps = false
+damage_paps = 4
+use_kr_paps = false

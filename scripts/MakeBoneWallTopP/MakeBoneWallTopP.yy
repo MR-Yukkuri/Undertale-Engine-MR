@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MakeBoneWallTopP",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MakeBoneWallTopP",
+  "parent":{
+    "name":"Papyrus",
+    "path":"folders/Scripts/Battle/Bullet/Papyrus.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

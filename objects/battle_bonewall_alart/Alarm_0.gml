@@ -7,9 +7,15 @@ switch(dir) {
 	case DIR.UP:
 		for(var i=0;fx-follow_target.left-2+space*i<fx+follow_target.right+5;i++) {
 			if dir==DIR.DOWN {
+				if is_paps
+				bone[i] = MakeBoneBottomP(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
+				else
 				bone[i] = MakeBoneBottom(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
 			}
 			else {
+				if is_paps
+				bone[i] = MakeBoneTopP(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
+				else
 				bone[i] = MakeBoneTop(fx-follow_target.left-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
 			}
 			if follow
@@ -22,9 +28,15 @@ switch(dir) {
 	case DIR.RIGHT:
 		for(var i=0;fy-follow_target.up-2+space*i<fy+follow_target.down+5;i++) {
 			if dir == DIR.LEFT {
+				if is_paps
+				bone[i] = MakeBoneLeftP(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
+				else
 				bone[i] = MakeBoneLeft(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
 			}
 			else {
+				if is_paps
+				bone[i] = MakeBoneRightP(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
+				else
 				bone[i] = MakeBoneRight(fy-follow_target.up-2+space*i,0,,,,color,,,,alarm[1]+5,,,,,follow,follow_target)
 			}
 			if follow

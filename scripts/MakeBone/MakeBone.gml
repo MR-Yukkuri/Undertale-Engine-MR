@@ -18,6 +18,7 @@
 ///@arg sin_offset 長さの初期位置
 ///@arg follow ターゲットに追従するか
 ///@arg follow_target 追従するターゲット
+///@arg is_paps パピルスの骨にするか
 ///@desc サンズの骨を作成する。
 function MakeBone(_x,_y,_length,_angle=0,_hspeed=0,_vspeed=0,_rot=0,_color=COLOR.WHITE,_out=false,_head_type=0,_origin=0,_len=0,_auto_destroy=true,_duration=-1,_sin_size=0,_sin_speed=0.1,_use_cos=false,sin_offset=0,_follow=false,_follow_target=battle_board){
 	var bone = instance_create_depth(_x,_y,0,battle_bullet_bone)

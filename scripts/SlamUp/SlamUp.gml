@@ -4,6 +4,8 @@ function SlamUp(anim_target=battle_enemy){
 var TARGET = anim_target
 Battle_SetSoul(battle_soul_blue)
 battle_soul.dir = DIR.UP;
+battle_soul.dir_old = DIR.UP
+battle_soul.image_angle = 180
 battle_soul.move = 6;
 battle_soul.impact = 1;
 battle_soul.jump_state = 2;

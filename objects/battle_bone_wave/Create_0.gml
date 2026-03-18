@@ -13,3 +13,4 @@ color = COLOR.WHITE
 head = false
 follow = false
 follow_target = battle_board
+is_paps = false

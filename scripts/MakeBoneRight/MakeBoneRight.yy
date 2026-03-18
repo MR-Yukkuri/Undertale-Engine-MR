@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"MakeBoneRight",
   "parent":{
-    "name":"Bullet",
-    "path":"folders/Scripts/Battle/Bullet.yy",
+    "name":"Sans",
+    "path":"folders/Scripts/Battle/Bullet/Sans.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -9,5 +9,6 @@ color = COLOR.WHITE
 follow = false
 follow_target = battle_board
 f_a = undefined
+is_paps = false
 depth = DEPTH_BATTLE.BULLET
 alarm[2] = 5

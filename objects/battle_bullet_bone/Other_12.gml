@@ -60,7 +60,7 @@ if color == COLOR.GREEN
     image_blend = c_lime
 R = RotateXY(cx,cy,0,0,image_angle)
 if length_result > 0 {
-	draw_sprite_ext(spr_bone_body,0,x+R[0],y+R[1],length_result/2,1,image_angle,image_blend,image_alpha)
+	draw_sprite_ext(is_paps?spr_bone_pap_body: spr_bone_body,0,x+R[0],y+R[1],length_result/2,1,image_angle,image_blend,image_alpha)
 }
 	var dist_left,dist_right
 	if origin == 1 {
@@ -75,13 +75,13 @@ if length_result > 0 {
 	}
 	if head_type != 1 && dw_left > 0 {
 		var ang = image_angle+180
-		var TL = RotateXY(dist_left,5,0,0,image_angle)
-		draw_sprite_general(spr_bone_head,0,0,0,dw_left,10,x+TL[0],y+TL[1],-1,1,ang,image_blend,image_blend,image_blend,image_blend,image_alpha)
+		var TL = RotateXY(dist_left,is_paps?7:5,0,0,image_angle)
+		draw_sprite_general(is_paps ? spr_bone_pap_head: spr_bone_head,0,0,0,dw_left,is_paps?13:10,x+TL[0],y+TL[1],-1,1,ang,image_blend,image_blend,image_blend,image_blend,image_alpha)
 	}
 	if head_type != 2 && dw_right > 0 {
 		var ang = image_angle
-		var TL = RotateXY(dist_right,-5,0,0,image_angle)
-		draw_sprite_general(spr_bone_head,0,0,0,dw_right,10,x+TL[0],y+TL[1],-1,1,ang,image_blend,image_blend,image_blend,image_blend,image_alpha)
+		var TL = RotateXY(dist_right,is_paps?-6:-5,0,0,image_angle)
+		draw_sprite_general(is_paps ? spr_bone_pap_head: spr_bone_head,0,0,0,dw_right,is_paps?13:10,x+TL[0],y+TL[1],-1,1,ang,image_blend,image_blend,image_blend,image_blend,image_alpha)
 	}
 //if array_length(collision) > 3 {
 //draw_triangle_color(collision[0,0],collision[0,1],collision[1,0],collision[1,1],collision[2,0],collision[2,1],c_red,c_red,c_red,true)
