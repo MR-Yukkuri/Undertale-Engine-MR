@@ -1,0 +1,10 @@
+radius = 64
+image_blend = c_purple
+follow_target = battle_board
+follow_x = 0
+follow_y = 0
+follow = false
+follow_angle = image_angle
+follow_hspeed = 0
+follow_vspeed = 0
+f_temp = false

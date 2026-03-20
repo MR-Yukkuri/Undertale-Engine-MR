@@ -1,18 +1,18 @@
 ///@arg x
 ///@arg y
-///@arg left
-///@arg right
 ///@arg up
 ///@arg down
+///@arg left
+///@arg right
 ///@arg angle
 ///@arg *rotate
 function Battle_CreateBoardCover(){
 	var X = argument[0];
 	var Y = argument[1];
-	var LEFT = argument[2];
-	var RIGHT = argument[3];
-	var UP = argument[4];
-	var DOWN = argument[5];
+	var UP = argument[2];
+	var DOWN = argument[3];
+	var LEFT = argument[4];
+	var RIGHT = argument[5];
 	var ANGLE = argument[6];
 	var ROT = 0;
 	if(argument_count >= 8){
@@ -29,6 +29,3 @@ function Battle_CreateBoardCover(){
 	
 	return cover;
 }
-
-//创建一个矩形的减框，多边形减框暂无
-//Create a Cover-Board,but there is no polygon Cover-Board

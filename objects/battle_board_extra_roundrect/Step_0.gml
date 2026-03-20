@@ -1,3 +1,4 @@
+angle += rot;
 if(instance_exists(hrect)){
 	hrect.angle = angle;
 	hrect.up = size/2;
@@ -6,7 +7,6 @@ if(instance_exists(hrect)){
 	hrect.right = (size-precision*2)/2;
 	hrect.x = x;
 	hrect.y = y;
-	hrect.angle = angle;
 }
 if(instance_exists(vrect)){
 	vrect.angle = angle;
@@ -16,7 +16,6 @@ if(instance_exists(vrect)){
 	vrect.right = size/2;
 	vrect.x = x;
 	vrect.y = y;
-	vrect.angle = angle;
 }
 if(instance_exists(circle_0)){
 	circle_0.radius = precision;

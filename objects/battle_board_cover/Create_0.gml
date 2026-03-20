@@ -11,10 +11,13 @@ _inst_frame_up=instance_create_depth(0,0,0,block);
 _inst_frame_left=instance_create_depth(0,0,0,block);
 _inst_frame_down=instance_create_depth(0,0,0,block);
 _inst_frame_right=instance_create_depth(0,0,0,block);
+_inst_filler=instance_create_depth(0,0,0,block);
 _inst_frame_up.sprite_index=spr_pixel;
 _inst_frame_left.sprite_index=spr_pixel;
 _inst_frame_down.sprite_index=spr_pixel;
 _inst_frame_right.sprite_index=spr_pixel;
+_inst_filler.sprite_index=spr_pixel;
+_inst_filler.visible=false;
 
 _point_x=0;
 _point_y=0;

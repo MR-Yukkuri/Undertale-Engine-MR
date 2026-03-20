@@ -1,10 +1,10 @@
 ///@desc Draw
 RenderCharEval();
 
-var HALIGN_ORI = draw_get_halign();
-var VALIGN_ORI = draw_get_valign();
-draw_set_halign(halign);
-draw_set_valign(valign);
+//var HALIGN_ORI = draw_get_halign();
+//var VALIGN_ORI = draw_get_valign();
+//draw_set_halign(halign);
+//draw_set_valign(valign);
 
 if(font_exists(font)||FORCE_TYPE=1){
 	draw_set_font(font);
@@ -37,8 +37,8 @@ draw_set_valign(1);
 draw_text(x, y, _line)
 */
 
-draw_set_halign(HALIGN_ORI);
-draw_set_valign(VALIGN_ORI);
+//draw_set_halign(HALIGN_ORI);
+//draw_set_valign(VALIGN_ORI);
 /*live;
 ///@desc Draw
 draw_set_halign(align=0 ? fa_left : (align=1 ? fa_center : fa_right))

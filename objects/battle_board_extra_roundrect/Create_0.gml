@@ -1,4 +1,5 @@
 angle = 0
+rot = 0
 precision = 20
 size = 100
 alarm[0] = 1
