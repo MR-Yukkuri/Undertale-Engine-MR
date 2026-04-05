@@ -8,7 +8,7 @@ function Lang_LoadSprite() {
 		ds_map_add(global._gmu_lang_sprite,"battle.button.fight",spr_battle_button_fight)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.act",spr_battle_button_act)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.item",spr_battle_button_item)
-		ds_map_add(global._gmu_lang_sprite,"battle.button.item_empty",spr_battle_button_item_empty)
+		ds_map_add(global._gmu_lang_sprite,"battle.button.item.empty",spr_battle_button_item_empty)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.mercy",spr_battle_button_mercy)
 		#endregion
 		break
@@ -17,7 +17,7 @@ function Lang_LoadSprite() {
 		ds_map_add(global._gmu_lang_sprite,"battle.button.fight",spr_battle_button_fight_ja)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.act",spr_battle_button_act_ja)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.item",spr_battle_button_item_ja)
-		ds_map_add(global._gmu_lang_sprite,"battle.button.item_empty",spr_battle_button_item_empty_ja)
+		ds_map_add(global._gmu_lang_sprite,"battle.button.item.empty",spr_battle_button_item_empty_ja)
 		ds_map_add(global._gmu_lang_sprite,"battle.button.mercy",spr_battle_button_mercy_ja)
 		#endregion
 		break
