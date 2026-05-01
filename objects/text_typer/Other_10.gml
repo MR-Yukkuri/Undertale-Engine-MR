@@ -58,6 +58,8 @@ if(_char != " " && _char != "　"){
 	INST.halign = _halign;
 	INST.valign = _valign;
 	INST._line = _line;
+	INST._align_x = _align_x;
+	INST._align_y = _align_y;
 	INST._deltaX = _char_x+OFFSET_X;
 	INST._deltaY = _char_y+OFFSET_Y;
 	INST._xUnit = [lengthdir_x(1,_angle*(_type_dir=0 ? 1 : -1)),lengthdir_y(1,_angle*(_type_dir=0 ? 1 : -1))];

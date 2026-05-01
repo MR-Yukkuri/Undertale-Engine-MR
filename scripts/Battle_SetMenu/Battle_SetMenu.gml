@@ -14,6 +14,35 @@ function Battle_SetMenu() {
 	////////////////////////////////////////
 	//按钮
 	if(MENU==BATTLE_MENU.BUTTON){
+		if(instance_exists(battle_soul)){
+			var button_inst = noone;
+			switch(Battle_GetMenuChoiceButton()){
+				case 0:
+					if(instance_exists(battle_button_fight)){
+						button_inst = instance_find(battle_button_fight,0);
+					}
+					break;
+				case 1:
+					if(instance_exists(battle_button_act)){
+						button_inst = instance_find(battle_button_act,0);
+					}
+					break;
+				case 2:
+					if(instance_exists(battle_button_item)){
+						button_inst = instance_find(battle_button_item,0);
+					}
+					break;
+				case 3:
+					if(instance_exists(battle_button_mercy)){
+						button_inst = instance_find(battle_button_mercy,0);
+					}
+					break;
+			}
+			if(button_inst!=noone){
+				battle_soul.x = button_inst.x+16;
+				battle_soul.y = button_inst.y+22;
+			}
+		}
 		Battle_SetDialog(Battle_GetMenuDialog());
 	}
 	

@@ -1,4 +1,5 @@
 function draw_sprite_outline(sprite,index,x,y,xscale=1,yscale=1,outline_size=1,angle=0,outline_color=c_black,color=c_white,alpha=1){
+	gpu_set_fog(true,outline_color,0,1)
     for (var i=-outline_size; i<=outline_size; i++) {
         for (var j=-outline_size; j<=outline_size; j++) {
             if (i != 0 || j != 0) { 
@@ -6,10 +7,11 @@ function draw_sprite_outline(sprite,index,x,y,xscale=1,yscale=1,outline_size=1,a
                     x + i,
                     y + j,
                     xscale, yscale, angle,
-                    outline_color, alpha
+                    c_white, alpha
                 );
             }
         }
     }
+	gpu_set_fog(false,c_black,0,1)
     draw_sprite_ext(sprite,index,x,y,xscale,yscale,angle,color,alpha);
 }

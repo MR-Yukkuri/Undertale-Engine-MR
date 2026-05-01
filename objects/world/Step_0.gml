@@ -62,7 +62,7 @@ if Player_GetKrTimer() > 0 {
 	Player_SetKrTimer(Player_GetKrTimer()-1)
 }
 else if Player_GetKrTimer() == 0 {
-	Player_SetKr(Player_GetKr()-1)
+	Player_SetKr(max(Player_GetKr()-1,0))
 	if Player_GetKr() > 0 {
 		Player_SetKrTimer(40-Player_GetKr())
 	}

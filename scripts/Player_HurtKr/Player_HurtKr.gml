@@ -7,11 +7,11 @@ function Player_HurtKr(damage=1) {
 		else	
 			Player_Hurt(damage);
 		if(kr<40){
-			Player_SetKr(kr+1);
+			Player_SetKr(min(kr+damage,40));
 		}
 	}else{
 		if(Player_GetKr()>0){
-			Player_SetKr(kr-1);
+			Player_SetKr(max(kr-damage,0));
 		}else{
 			Player_SetHp(0);
 		}

@@ -35,6 +35,7 @@ _position_follow=true;
 _audio_clear=true;
 _align_x = 0
 _align_y = 0
+_line_align_x[0] = 0
 _fadein = false
 _fadein_x = 0
 _fadein_y = 0
@@ -111,12 +112,12 @@ function CharUpdate(character){
 	with(character){
 		if(other._position_follow = 1){
 			if(other._type_dir = 0){
-				x = other.x +other._align_x+ _offset_x + _xUnit[0] * _deltaX + _yUnit[0] * _deltaY;
-				y = other.y +other._align_y+ _offset_y + _xUnit[1] * _deltaX + _yUnit[1] * _deltaY;
+				x = other.x + _offset_x + _xUnit[0] * (_align_x + _deltaX) + _yUnit[0] * (_align_y + _deltaY);
+				y = other.y + _offset_y + _xUnit[1] * (_align_x + _deltaX) + _yUnit[1] * (_align_y + _deltaY);
 			}
 			else{
-				x = other.x +other._align_x+ _offset_x + _xUnit[1] * _deltaX + _yUnit[1] * _deltaY;
-				y = other.y +other._align_y+ _offset_y + _xUnit[0] * _deltaX + _yUnit[0] * _deltaY;
+				x = other.x + _offset_x + _xUnit[1] * (_align_x + _deltaX) + _yUnit[1] * (_align_y + _deltaY);
+				y = other.y + _offset_y + _xUnit[0] * (_align_x + _deltaX) + _yUnit[0] * (_align_y + _deltaY);
 			}
 		}
 	}
@@ -164,6 +165,7 @@ function ChangeText(){
 	_audio_clear=true;
 	_align_x = 0
 	_align_y = 0
+	_line_align_x[0] = 0
 
 	_choice=-1;
 	_choice_x[0]=0;
