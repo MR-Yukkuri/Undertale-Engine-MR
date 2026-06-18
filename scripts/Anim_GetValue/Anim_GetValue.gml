@@ -42,24 +42,25 @@ function Anim_GetValue() {
 			break;
 		
 		case ANIM_TWEEN.QUAD:
-			switch(EASE){
-				case ANIM_EASE.IN:
-					t/=d;
-					r=c*t*t+b;
-					break;
-				case ANIM_EASE.OUT:
-					t/=d;
-					r=-c*t*(t-2)+b;
-					break;
-				case ANIM_EASE.IN_OUT:
-					t/=d/2;
-					if(t<1){
-						r=c/2*t*t+b;
-					}else{
-						r=-c/2*((--t)*(t-2)-1)+b;
-					}
-					break;
-			}
+		    switch(EASE){
+		        case ANIM_EASE.IN:
+		            t/=d;
+		            r=c*t*t+b;
+		            break;
+		        case ANIM_EASE.OUT:
+		            t/=d;
+		            r=-c*t*(t-2)+b;
+		            break;
+		        case ANIM_EASE.IN_OUT:
+		            t/=(d/2);
+		            if (t<1) {
+		                r = (c/2)*t*t+b;
+		            } else {
+		                t = t-1;
+		                r = -c/2*((t*(t-2))-1)+b;
+		            }
+		            break;
+		    }
 			break;
 		
 		case ANIM_TWEEN.CUBIC:

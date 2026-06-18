@@ -35,7 +35,7 @@ function MakeGB(x,y,x_target,y_target,angle,angle_target,_xscale=2,_yscale=2,_co
 	gb.duration = _duration
 	gb.color = _color
 	gb.follow = _follow
-	gb._follow_target = _follow_target
+	gb.follow_target = _follow_target
 	gb.image_xscale = _xscale
 	gb.image_yscale = _yscale
 	if _follow
