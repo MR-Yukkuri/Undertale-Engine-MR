@@ -14,7 +14,7 @@ function GetTextSizePerLine(TEXT) {
 		if (ds_map_exists(_map_macro, value)) {
 			return ds_map_find_value(_map_macro, value);
 		}
-		return real(value);
+		return value;
 	};
 
 	var len = string_length(TEXT);
